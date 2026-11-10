@@ -1,262 +1,99 @@
-const cuellarSlideShow = [
-  {
-    src: "img/cuellar-1.jpg",
-    title: "Los cisnes de la Laguna Cuellar",
-    credits: '—Revista "Ahora: Historias y Leyendas de Cochabamba"',
-  },
-  {
-    src: "img/cuellar-2.jpg",
-    title: "Laguna Cuellar",
-    credits: "—Autor desconocido. Cochabamba, 1925",
-    figcaption: "Había una pequeña isla con un quiosco al medio de la laguna.",
-  },
-];
+/*
+ * Galería de fotos con <dialog> nativo: foco, tecla Esc y fondo
+ * los maneja el navegador. Flechas del teclado para navegar.
+ */
 
-const estadioSlideShow = [
-  {
-    src: "img/estadio-1.jpg",
-    title: "Estadio Félix Capriles",
-    credits: '—Blog "Los Estadios del Mundo"',
-  },
-];
+/* global GALERIAS */
+/* eslint-disable no-unused-vars */
 
-const sarcoSlideShow = [
-  {
-    src: "img/sarco-1.jpg",
-    title: "El espejo de la Laguna Sarco",
-    credits: "—Rodolfo Torrico Zamudio (ca. 1940-1950)",
-  },
-];
+const Galeria = (() => {
+  const dialogo = document.getElementById("galeria");
+  const titulo = dialogo.querySelector(".galeria__titulo");
+  const img = dialogo.querySelector(".galeria__img");
+  const vacio = dialogo.querySelector(".galeria__vacio");
+  const creditos = dialogo.querySelector(".galeria__creditos");
+  const texto = dialogo.querySelector(".galeria__texto");
+  const contador = dialogo.querySelector(".galeria__contador");
+  const prev = dialogo.querySelector(".galeria__flecha--prev");
+  const next = dialogo.querySelector(".galeria__flecha--next");
 
-const complejoSarcoSlideShow = [
-  {
-    src: "img/complejo-sarco-1.jpg",
-    title: "Gimnasio Polifuncional Sarco",
-    credits: "—Los Tiempos. Daniel James.",
-  },
-  {
-    src: "img/complejo-sarco-2.png",
-    title: "Gimnasio Polifuncional Sarco",
-    credits: "—Google maps (2015)",
-  },
-];
+  let fotos = [];
+  let indice = 0;
+  let solicitud = 0;
+  const cache = new Map();
 
-const cuadrasSlideShow = [
-  { src: "", credits: "—No se tienen fotos de la Laguna Cuadras" },
-];
-
-const estacionTelefericoSlideShow = [
-  {
-    src: "img/estacion-teleferico-1.png",
-    title: "Parque de la Autonomía",
-    credits: "—Google maps (2015)",
-  },
-  {
-    src: "img/estacion-teleferico-2.png",
-    title: "Estación Teleférico",
-    credits: "—Google maps (2015)",
-  },
-];
-
-const quenamariSlideShow = [
-  {
-    src: "img/quenamari-1.jpg",
-    title: "Laguna Quenamari",
-    credits: "—Los Tiempos. Carlos López (2016)",
-    figcaption:
-      "Ya en el 2015, se presentó un <a href='https://www.lostiempos.com/actualidad/cochabamba/20190504/tres-anos-no-hay-ley-proteccion-quenamari' target='_blank'>proyecto de Ley</a> para hacer de la Laguna Quenamari un área protegida. No ha sido aprobado hasta la fecha.",
-  },
-  {
-    src: "img/quenamari-2.jpg",
-    title: "Laguna Quenamari",
-    credits: "—Los Tiempos. José Rocha (2017)",
-    figcaption:
-      "El agua que ingresaba a la laguna desde los rebalses del río Rocha y Tamborada ha sido <a href='https://www.lostiempos.com/actualidad/cochabamba/20171122/30-anos-ciudad-perdio-4-lagunas-urbanas-hay-3-riesgo' target='_blank'>desviado</a>.",
-  },
-  {
-    src: "img/quenamari-3.jpg",
-    title: "Laguna Quenamari avasallada",
-    credits: "—Opinión (2019)",
-    figcaption:
-      "Poco a poco, los terrenos de la laguna son <a href='https://www.opinion.com.bo/articulo/cochabamba/construcciones-invaden-laguna-quenamari-entes-buscan-frenar/20190321060800644802.html' target='_blank'>rellenados</a> para cultivar o incluso para construir.",
-  },
-  {
-    src: "img/quenamari-4.jpg",
-    title: "Aves de la laguna Quenamari",
-    credits:
-      "—Captura de pantall del Documental 'La Laguna de Quenamari' (TVU-2014)",
-    figcaption:
-      "Más de 100 especes de aves podían encontrarse en la Laguna de Quenamari.",
-  },
-];
-
-class Director {
-  constructor() {
-    this.imgList = new Map();
-    this.imgList.set("default", document.querySelector("#slideshow img"));
-    this.modal = document.querySelector(".modal");
-    this.slideshow = document.querySelector("#slideshow");
-    this.title = document.querySelector("#slideshow h2");
-    this.index = 0;
-    this.prev = document.querySelector(".side-arrow.prev");
-    this.img = document.querySelector("#slideshow img");
-    this.next = document.querySelector(".side-arrow.next");
-    this.cite = document.querySelector("#slideshow cite");
-    this.figcaption = document.querySelector("#slideshow figcaption");
-    this.slideShowList = [];
-  }
-
-  async start(slideShowList) {
-    this.index = 0;
-    this.slideShowList = slideShowList;
-    this.showArrows();
-    this.modal.classList.add("show-modal");
-    await this.showSingleImg();
-  }
-
-  reset() {
-    this.title.textContent = "";
-    this.cite.textContent = "";
-    this.figcaption.innerHTML = "";
-    if (this.img !== this.imgList.get("default")) {
-      this.slideshow.replaceChild(this.imgList.get("default"), this.img);
-      this.img = this.imgList.get("default");
+  const precargar = (src) => {
+    if (!src) return Promise.resolve();
+    if (!cache.has(src)) {
+      const im = new Image();
+      im.src = src;
+      cache.set(src, im.decode().catch(() => {}));
     }
-  }
+    return cache.get(src);
+  };
 
-  showArrows() {
-    if (this.index == 0) this.prev.classList.add("hidden");
-    else this.prev.classList.remove("hidden");
+  const mostrar = async () => {
+    const { src, title = "", credits = "", figcaption = "" } = fotos[indice];
+    const id = ++solicitud;
+
+    titulo.textContent = title;
+    creditos.textContent = credits;
+    texto.innerHTML = figcaption;
+    contador.textContent = fotos.length > 1 ? `${indice + 1} / ${fotos.length}` : "";
+    prev.hidden = indice === 0;
+    next.hidden = indice >= fotos.length - 1;
+
+    if (!src) {
+      img.hidden = true;
+      vacio.hidden = false;
+      return;
+    }
+    vacio.hidden = true;
+    img.hidden = false;
+    img.classList.add("cargando");
+    await precargar(src);
+    if (id !== solicitud) return; // otra foto fue pedida mientras cargaba
+    img.src = src;
+    img.alt = title;
+    img.classList.remove("cargando");
+
+    // precarga la siguiente
+    if (fotos[indice + 1]) precargar(fotos[indice + 1].src);
+  };
+
+  const abrir = (clave) => {
+    fotos = GALERIAS[clave] ?? [];
+    if (!fotos.length) return;
+    indice = 0;
+    mostrar();
+    if (!dialogo.open) dialogo.showModal();
+  };
+
+  const mover = (paso) => {
+    const nuevo = indice + paso;
+    if (nuevo < 0 || nuevo >= fotos.length) return;
+    indice = nuevo;
+    mostrar();
+  };
+
+  prev.addEventListener("click", () => mover(-1));
+  next.addEventListener("click", () => mover(1));
+
+  dialogo.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft") mover(-1);
+    if (e.key === "ArrowRight") mover(1);
+  });
+
+  // click fuera de la foto cierra la galería
+  dialogo.addEventListener("click", (e) => {
     if (
-      this.slideShowList.length > 1 &&
-      this.index < this.slideShowList.length - 1
-    )
-      this.next.classList.remove("hidden");
-    else this.next.classList.add("hidden");
-  }
-
-  async showSingleImg() {
-    this.reset();
-    const { src, title, credits, figcaption = "" } = this.slideShowList[
-      this.index
-    ];
-    if (title) this.title.appendChild(document.createTextNode(title));
-
-    if (src) {
-      if (!this.imgList.has(src)) {
-        this.imgList.set(src, await this.loadImg(src));
-      } else this.imgList.get(src);
-      this.slideshow.replaceChild(this.imgList.get(src), this.img);
-      this.img = this.imgList.get(src);
-    } else {
-      this.slideshow.replaceChild(this.imgList.get("default"), this.img);
-      this.img = this.imgList.get("default");
+      e.target === dialogo ||
+      e.target.classList.contains("galeria__figura") ||
+      e.target.classList.contains("galeria__marco")
+    ) {
+      dialogo.close();
     }
+  });
 
-    if (credits) this.cite.appendChild(document.createTextNode(credits));
-
-    if (figcaption) this.figcaption.innerHTML = figcaption;
-  }
-
-  async showCollage() {
-    if (this.imgList.has("img/collage.jpg")) return;
-    const collageImg = await this.loadImg("img/collage.jpg");
-    collageImg.id = "collage";
-    collageImg.alt = "Aves en las lagunas Alalay, Coña Coña y Quenamari";
-    this.imgList.set("img/collage.jpg", collageImg);
-    document
-      .querySelector("#cocha-map-container")
-      .replaceChild(
-        collageImg,
-        document.querySelector("#cocha-map-container img")
-      );
-  }
-
-  /* https://stackoverflow.com/questions/46399223/async-await-in-image-loading */
-  async loadImg(src) {
-    return new Promise((resolve, reject) => {
-      let img = new Image();
-      img.onload = () => resolve(img);
-      img.onerror = reject;
-      img.src = src;
-    });
-  }
-
-  stop() {
-    this.modal.classList.remove("show-modal");
-  }
-
-  async nextImg() {
-    this.index++;
-    this.showArrows();
-    await this.showSingleImg();
-  }
-
-  async prevImg() {
-    this.index--;
-    this.showArrows();
-    await this.showSingleImg();
-  }
-}
-
-const director = new Director();
-
-const getImage = (e) => {
-  switch (e.target.id) {
-    case "lag-cuellar":
-      if (e.target.classList.contains("estadio-cover"))
-        director.start(estadioSlideShow);
-      else director.start(cuellarSlideShow);
-      break;
-    case "lag-sarco":
-      if (e.target.classList.contains("complejo-sarco-cover"))
-        director.start(complejoSarcoSlideShow);
-      else director.start(sarcoSlideShow);
-
-      break;
-    case "lag-cuadras":
-      if (e.target.classList.contains("estacion-teleferico-cover"))
-        director.start(estacionTelefericoSlideShow);
-      else director.start(cuadrasSlideShow);
-      break;
-    case "lag-quenamari-circle":
-      director.start(quenamariSlideShow);
-      break;
-  }
-};
-
-document
-  .querySelectorAll("#cercado-svg-lagunas circle")
-  .forEach((e) => e.addEventListener("click", getImage));
-
-document.querySelector(".modal").addEventListener("click", (e) => {
-  if (e.target === document.querySelector("#slideshow")) director.stop();
-});
-
-document
-  .querySelector(".close-modal-button")
-  .addEventListener("click", () => director.stop());
-
-document
-  .querySelector(".side-arrow.prev")
-  .addEventListener("click", () => director.prevImg());
-
-document
-  .querySelector(".side-arrow.next")
-  .addEventListener("click", () => director.nextImg());
-
-document.querySelector("#photos-cuellar").addEventListener("click", () => {
-  director.start(cuellarSlideShow);
-});
-
-document.querySelector("#photos-sarco").addEventListener("click", () => {
-  director.start(sarcoSlideShow);
-});
-
-document.querySelector("#photos-cuadras").addEventListener("click", () => {
-  director.start(cuadrasSlideShow);
-});
-
-document.querySelector("#photos-quenamari").addEventListener("click", () => {
-  director.start(quenamariSlideShow);
-});
+  return { abrir };
+})();

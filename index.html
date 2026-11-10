@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="es">
   <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -16,12 +15,14 @@
       gtag("config", "UA-116715402-2");
     </script>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Lagunas Perdidas de Cochabamba</title>
     <link rel="canonical" href="https://labtecnosocial.org/cocha-lagunas/" />
     <meta
       name="description"
       content="Las lagunas perdidas en la ciudad de Cochabamba: Laguna Cuellar, Laguna Sarco y Laguna Cuadras. La laguna de Quenamari corre el riesgo de secarse."
     />
+    <meta name="theme-color" content="#ffffff" />
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@LabTecnoSocial" />
@@ -38,13 +39,14 @@
     <meta property="og:title" content="Lagunas Perdidas de Cochabamba" />
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="Lab TecnoSocial" />
+    <meta property="og:locale" content="es_ES" />
     <meta
       property="og:url"
       content="https://labtecnosocial.org/cocha-lagunas/"
     />
     <meta
       property="og:image"
-      content="http://labtecnosocial.org/wp-content/uploads/2021/04/cocha-lagunas-front.jpg"
+      content="https://labtecnosocial.org/wp-content/uploads/2021/04/cocha-lagunas-front.jpg"
     />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -52,730 +54,467 @@
       property="og:description"
       content="Conoce las lagunas perdidas de Cochabamba: Laguna Cuellar, Laguna Sarco y Laguna Cuadras."
     />
-    <meta property="og:site_name" content="Lab TecnoSocial" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
+
+    <!-- Tipografías: Fraunces (titulares), Source Serif 4 (lectura), Inter (datos y rótulos) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;1,400&family=Roboto:wght@700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&family=Inter:wght@400..600&display=swap"
       rel="stylesheet"
     />
-    <meta property="og:locale" content="es_ES" />
-    <!--Regular CSS file-->
-    <!--<link rel="stylesheet" href="css/style.css" />-->
-    <link rel="stylesheet" href="css/style.min.css" />
-    <script src="js/anime.min.js" defer></script>
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Animación de scroll: GSAP + ScrollTrigger -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
+      defer
+    ></script>
+    <script src="js/data.js" defer></script>
+    <script src="js/map.js" defer></script>
+    <script src="js/slideshow.js" defer></script>
+    <script src="js/main.js" defer></script>
   </head>
   <body>
-    <div id="inicio" class="center">
-      <a href="https://labtecnosocial.org" id="logo"></a>
-      <div id="titulo">
-        <h1>
-          <strong>Un paseo histórico por las lagunas de Cochabamba</strong>
-          <span>por Fabrizzio Gonzales, Valeria Peredo</span>
-        </h1>
-      </div>
-    </div>
-    <cite id="credits-inicio"
-      >Créditos fotografía Rodolfo Torrico Zamudio (izquierda), blog Worldwide
-      walkers (derecha)</cite
-    >
+    <div class="progreso" aria-hidden="true"></div>
 
-    <section id="sec-1">
-      <div>
-        <p>
-          <strong>1</strong> Cochabamba ha sido históricamente un territorio de
-          lagunas. Su misma denominación proviene de los vocablos quechuas:
-          <strong> <span class="italic">q'ucha</span> (lago)</strong> -
-          <strong> <span class="italic">pampa</span> (llano) </strong>.
-        </p>
+    <!-- Portada -->
+    <header class="portada" id="inicio">
+      <div class="portada__imagen" aria-hidden="true"></div>
+      <div class="portada__titulo">
+        <h1>Un paseo histórico por las lagunas de Cochabamba</h1>
       </div>
-      <blockquote>
-        <div>
-          <p>
-            No es extraño que ésta fuera llamada, la tierra de las lagunas.
-            Innumerables eran espejos que saludaban al cielo.
-          </p>
-          <figcaption>
-            Andrés Uzeda, <cite>¿Te acuerdas del río?</cite>
-          </figcaption>
-        </div>
-      </blockquote>
-    </section>
-
-    <section id="sec-2">
-      <div>
-        <p>
-          <strong>2</strong> En la provincia de Cercado, se contaba con un
-          número incontable de lagos y pequeñas lagunas. Muchas de ellas eran
-          efímeras, es decir que se llenaban de agua en época lluviosa para
-          secarse poco tiempo después.
-        </p>
-      </div>
-    </section>
-
-    <section id="sec-3">
-      <div>
-        <p>
-          <strong>3</strong> Lastimosamente, este morir y renacer de las lagunas
-          prácticamente ha cesado. Muchas de las lagunas de Cochabamba son ahora
-          tan solo un recuerdo.
-        </p>
-      </div>
-    </section>
-
-    <section id="sec-4">
-      <div>
-        <p>
-          <strong>4</strong> A continuación, daremos corta nota de algunas de
-          las lagunas que nuestros padres conocieron. Nos enfocaremos en la
-          provincia de Cercado.
-        </p>
-      </div>
-    </section>
-
-    <section id="sec-5">
-      <div>
-        <p>
-          <strong>5</strong> La <strong>Laguna Cuellar</strong> se ubicaba en
-          cercanía de lo que era en aquel entonces la campiña de la familia del
-          mismo nombre, en la zona de <strong>Cala-Cala</strong>. Click
-          <span id="photos-cuellar"><strong>aquí</strong></span> para ver fotos.
-        </p>
-      </div>
-      <blockquote>
-        <div>
-          <p>
-            Yo conocí la Laguna Cuellar. Tenía sauces en las riberas y hasta un
-            botecito para navegar.
-          </p>
-        </div>
-      </blockquote>
-    </section>
-
-    <section id="sec-6">
-      <div>
-        <p>
-          <strong>6</strong> Hacia 1920, los predios de la laguna fueron
-          destinados a la construcción del
-          <strong>Estadio Félix Capriles</strong>. A medida que las canchas de
-          fútbol se extendían a los terrenos aledaños, la laguna fue perdiendo
-          terreno. Para <strong>1960</strong>, la laguna había sido
-          <strong>totalmente desecada</strong>.
-        </p>
-      </div>
-    </section>
-
-    <!-- Sarco 1 -->
-    <section id="sec-7">
-      <div>
-        <p>
-          <strong>7</strong> Un centro de recreación concurrido en el pasado,
-          era la <strong>Laguna Sarco</strong>. Se ubicaba al lado oeste del
-          actual <strong>Parque Lincoln</strong>, al norte de la actual avenida
-          América. Click
-          <span id="photos-sarco"><strong>aquí</strong></span> para ver fotos.
-        </p>
-      </div>
-      <blockquote>
-        <div>
-          <p>
-            En el espejo de la laguna de Sarco, al extremo Norte de la ciudad,
-            se refleja un paisaje acogedor.
-          </p>
-          <figcaption>
-            Rodolfo Torrico Zamudio, <cite>ca. 1940-1950</cite>
-          </figcaption>
-        </div>
-      </blockquote>
-    </section>
-
-    <!-- Sarco 2-->
-    <section id="sec-8">
-      <div>
-        <p>
-          <strong>8</strong> Actualmente la laguna de Sarco ya no existe. No se
-          pudo encontrar datos sobre el año de su desaparición. En el que era su
-          territorio, ahora tenemos un centro deportivo que lleva el mismo
-          nombre: <strong>Gimnasio Polifuncional Sarco</strong>.
-        </p>
-      </div>
-    </section>
-
-    <section id="sec-9">
-      <div>
-        <p>
-          <strong>9</strong> La última de las lagunas perdidas que veremos es la
-          laguna de <strong>Las Cuadras</strong>. Se ubicaba en proximidades del
-          barrio que llevaba el mismo nombre (actual campus UMSS), al final este
-          de la <strong>avenida Heroínas</strong>. Click
-          <span id="photos-cuadras"><strong>aquí</strong></span> para ver fotos.
-        </p>
-      </div>
-      <blockquote>
-        <div>
-          <p>
-            En la noche se caracterizaba por el fuerte sonido del croar de las
-            ranas. Los circos se asentaban ahí también.
-          </p>
-        </div>
-      </blockquote>
-    </section>
-
-    <section id="sec-10">
-      <div>
-        <p>
-          <strong>10</strong> Como muchas otras, la laguna de Las Cuadras es
-          ahora tan solo un recuerdo. En su antigua ubicación, ahora se
-          encuentra la <strong>estación del teleférico</strong> que sube al
-          Cristo. No se consiguió información sobre su extensión exacta ni sobre
-          el año de su desaparición.
-        </p>
-      </div>
-    </section>
-
-    <section id="sec-11">
-      <div>
-        <p>
-          <strong>11</strong> Sin hacer mención de muchas otras lagunas que se
-          perdieron, en la actualidad nos quedan tan solo tres lagunas:
-          <strong>Alalay</strong>, <strong>Coña Coña</strong> y
-          <strong>Quenamari</strong>. Todas ellas en
-          <strong>estado crítico</strong> y riesgo de secarse o incluso de ser
-          loteadas.
-        </p>
-      </div>
-    </section>
-
-    <section id="sec-12">
-      <div>
-        <p>
-          <strong>12</strong> La situación de la Laguna de
-          <strong>Quenamari</strong> es la más preocupante. Ya en el 2016, se
-          había reportado que su área se redujo de 40 a tan solo
-          <strong>4 hectáreas</strong>. Sin ninguna Ley que la proteja, lo que
-          queda de la laguna es reducido poco a poco por
-          <strong>loteamientos</strong>. Click
-          <span id="photos-quenamari"><strong>aquí</strong></span> para fotos.
-        </p>
-      </div>
-    </section>
-
-    <div id="end-div" class="center">
-      <h2>Cochabamba, ¿qué futuro queremos?</h2>
-      <a
-        id="final-message"
-        href="https://labtecnosocial.org/lagunas-perdidas-cochabamba#importancia-lagunas"
-        target="_blank"
+      <cite class="portada__creditos"
+        >Créditos fotografía Rodolfo Torrico Zamudio (izquierda), blog Worldwide
+        walkers (derecha)</cite
       >
-        Click <strong>aquí</strong> para conocer más
-      </a>
+    </header>
+
+    <!-- Entradilla -->
+    <div class="entradilla">
+      <p class="firma">
+        <span>por Fabrizzio Gonzales, Valeria Peredo</span>
+        <time datetime="2021-04-27">27/04/2021</time>
+      </p>
+      <p class="entradilla__texto">
+        Cochabamba es una ciudad con lagunas descuidadas. Las pocas lagunas que
+        nos quedan o se encuentran en un estado crítico por contaminación
+        ambiental o corren el riesgo de desaparecer. Si bien la ciudad le debe
+        su nombre a estos cuerpos de agua, al ser la combinación de los
+        vocablos quechuas <em>q'ucha</em> (lago) y <em>pampa</em> (llano),
+        muchas lagunas emblemáticas para la ciudad han desaparecido con el paso
+        de los años, y actualmente, en el municipio, solo quedan tres: Alalay,
+        Coña Coña y Quenamari.
+      </p>
+      <div class="entradilla__pista" aria-hidden="true"><span></span></div>
     </div>
 
-    <footer class="center row footer-class">
-      <div class="social-media center row buttons">
-        <span class="hide-small">Compartir</span>
-        <a
-          id="share-facebook"
-          href="http://www.facebook.com/sharer.php?u=https://labtecnosocial.org/cocha-lagunas/"
-          target="_blank"
+    <!-- Scrollytelling -->
+    <main class="scrolly">
+      <div class="mapa" aria-hidden="false">
+        <svg
+          id="mapa"
+          class="mapa__svg"
+          viewBox="0 0 500 500"
+          preserveAspectRatio="xMidYMid meet"
+          xmlns="http://www.w3.org/2000/svg"
+          role="img"
+          aria-label="Mapa del departamento de Cochabamba y de la provincia Cercado, con sus lagunas"
         >
-        </a>
-        <a
-          id="share-twitter"
-          href="https://twitter.com/intent/tweet?url=https://labtecnosocial.org/cocha-lagunas/&text=Conoce%20las%20lagunas%20perdidas%20de%20Cochabamba:%20Laguna%20Cuellar,%20Laguna%20Sarco%20y%20Laguna%20Cuadras&hashtags=cochaLagunas,LabTecnoSocial&via=LabTecnoSocial"
-          target="_blank"
-        >
-        </a>
-        <a
-          id="share-whatsapp"
-          href="https://api.whatsapp.com/send?text=https://labtecnosocial.org/cocha-lagunas/"
-          data-action="share/whatsapp/share"
-          target="_blank"
-        ></a>
+          <defs>
+            <pattern id="cuellar-cover" patternContentUnits="objectBoundingBox" width="1" height="1">
+              <image href="img/cuellar-thumbnail.jpg" width="1" height="1" preserveAspectRatio="xMidYMid slice" />
+            </pattern>
+            <pattern id="estadio-cover" patternContentUnits="objectBoundingBox" width="1" height="1">
+              <image href="img/estadio-thumbnail.jpg" width="1" height="1" preserveAspectRatio="xMidYMid slice" />
+            </pattern>
+            <pattern id="sarco-cover" patternContentUnits="objectBoundingBox" width="1" height="1">
+              <image href="img/sarco-thumbnail.jpg" width="1" height="1" preserveAspectRatio="xMidYMid slice" />
+            </pattern>
+            <pattern id="complejo-sarco-cover" patternContentUnits="objectBoundingBox" width="1" height="1">
+              <image href="img/complejo-sarco-thumbnail.jpg" width="1" height="1" preserveAspectRatio="xMidYMid slice" />
+            </pattern>
+            <pattern id="estacion-teleferico-cover" patternContentUnits="objectBoundingBox" width="1" height="1">
+              <image href="img/estacion-teleferico-thumbnail.jpg" width="1" height="1" preserveAspectRatio="xMidYMid slice" />
+            </pattern>
+            <pattern id="lag-quenamari-cover" patternContentUnits="objectBoundingBox" width="1" height="1">
+              <image href="img/quenamari-thumbnail.jpg" width="1" height="1" preserveAspectRatio="xMidYMid slice" />
+            </pattern>
+          </defs>
+
+          <!-- Departamento de Cochabamba (coordenadas propias, escaladas al Cercado) -->
+          <g id="capa-cocha">
+            <path id="cocha-region" fill-rule="evenodd" d="M364.067 74.3658L365.399 100.443L370.932 124.882L374.211 140.252L372.776 146.861L369.293 165.511L361.915 167.56L355.152 192.562L356.792 201.989L362.12 217.615L370.113 221.509L369.908 227.042L378.105 231.755L388.556 237.289L394.09 243.027L405.566 246.101L408.435 250.2L414.583 252.044L416.838 256.962L414.994 259.627L418.067 259.832L424.011 260.037L421.551 262.496V264.135L426.674 268.234L426.264 275.612L425.65 278.891L424.83 281.76H422.166L420.936 283.195L418.477 282.99L416.838 281.76L412.944 282.169L410.279 285.244H408.23L406.181 284.834V287.498L405.976 292.826L404.132 293.441L402.902 296.105L403.722 298.872L403.107 302.151L399.213 305.02L391.836 304.61L390.196 303.586H385.688L382.409 306.249L379.744 311.783L376.465 312.603L376.875 317.931L368.473 318.955L367.038 320.39L361.915 322.03L358.021 332.891L353.308 346.007L363.349 359.533L366.014 359.942L365.194 363.426L370.318 368.14L378.105 367.115L382.819 369.369L390.196 374.288L395.32 388.633L397.573 396.011L401.877 396.831L401.672 401.749L406.386 411.996L412.739 415.275L417.452 418.554L422.986 431.669L417.452 434.539L417.042 440.072H413.968L411.714 433.924L404.132 435.153L400.238 439.252L392.655 441.097H386.098L385.483 438.842L378.515 435.973L375.646 429.006L373.392 428.391L368.678 423.677L357.612 422.575L355.459 417.862L351.463 417.247H345.213L339.885 421.039L335.581 424.625L330.97 425.855L327.486 430.158L324.719 432.72L323.388 436.102L326.359 440.2L325.641 442.044L319.391 439.791L317.034 439.38L317.546 437.126L310.682 433.54L303.816 435.076L303.714 433.335L300.537 433.95L297.77 431.901L299.103 424.83L298.795 419.809L294.799 419.912L292.442 419.092L292.954 413.456L290.086 411.509L288.343 414.686L287.114 413.968L287.216 409.255L276.764 401.467L275.74 402.902L271.026 399.316L268.977 394.193L265.903 388.147L260.575 387.02L254.734 381.896L248.586 373.263L227.273 356.766L221.637 351.617L219.178 351.822L212.108 354.384L209.853 352.539L209.648 350.183L208.316 348.44L207.497 349.567L203.398 347.006L203.193 345.161L195.303 333.275L188.54 329.97L185.671 331.918L185.261 335.812L187.003 337.656L174.4 346.878L173.068 348.825L170.506 349.132L170.096 347.186L168.456 347.595L165.588 351.899L162.411 351.694L161.899 350.157L158.62 348.313L153.087 349.44L146.528 353.641L142.635 354.153L138.638 357.637L138.946 359.584L135.667 362.248L136.077 364.195L129.724 365.425L124.293 367.678L121.834 370.445H115.276L113.534 371.572H112.099L111.587 370.138L109.742 369.933L106.669 371.265L102.775 371.983L100.623 368.396L99.1887 367.884L98.6764 365.629L101.135 364.605V362.658L99.1887 360.916L97.3438 359.994V358.559L98.7789 358.661L100.52 357.227L101.75 357.432L104.927 354.46L103.8 351.592L105.234 346.135L102.365 342.446L102.468 341.114L107.489 341.217L108.206 342.446L111.075 341.114L110.768 339.782L108.718 337.835L109.435 334.351L106.669 334.556L103.492 328.613L100.418 328.818L100.623 326.154L91.1961 323.388L92.1182 321.133L83.9208 309.733L85.0476 309.119L83.4085 305.635L86.995 300.793L85.6632 298.129L88.3268 297.617L90.1717 299.051L90.9912 296.183L94.5777 295.465L95.7046 294.747L97.856 292.903L95.4997 284.501L92.2206 283.066L90.3766 280.197L91.5035 277.226L93.5524 276.278L94.7826 267.978L88.6341 265.314L88.5317 261.523L90.5814 258.243L88.9415 254.964L88.0194 244.513L85.9705 241.746L83.5109 241.644L76.5432 233.241L74.2889 225.531L73.9815 220.92L78.2851 217.436L77.363 215.08L84.5357 206.139L95.3973 207.061L101.955 202.629L107.898 196.277L107.796 192.69L104.722 188.796L107.386 183.878L108.513 175.168L102.673 166.125L104.722 164.691L102.057 162.129L99.9058 136.487L93.1426 131.26L94.3728 124.805L84.8427 111.254V108.692L85.5607 107.873L84.6381 99.2657L85.7656 98.5477L85.5607 96.1915L90.7863 91.2469L88.4292 86.9433L89.9668 85.6115L86.8925 80.6931L86.3803 77.3117L99.8033 58.0478L114.558 74.0583L130.953 104.082L144.889 123.986L167.227 139.355L189.462 150.448L199.504 152.907H213.132L237.212 144.197L245.922 139.074L259.652 130.365L262.009 126.957L271.026 105.849L283.015 86.0729L297.668 74.4682L300.742 72.9312L305.148 72.7263L316.42 74.6732L364.067 74.3658Z" />
+            <path id="cocha-cercado" fill-rule="evenodd" d="M185.71 263.529L186.16 264.201L186.404 264.868L186.416 265.548L186.237 266.089L186.404 266.332L186.52 267.116L186.93 267.62L187.149 268.172L187.213 268.84L187.457 269.109L187.084 270.137L186.699 270.175L186.583 270.436L185.941 271.103L185.916 271.335L185.723 271.579L185.852 271.875L185.864 272.196L185.646 272.452L185.53 274.639L185.312 274.883L185.299 275.461L185.428 275.834L185.042 276.373L185.428 276.411L185.877 277.147L186.121 277.16L186.891 278.521L187.072 279.125L187.278 279.485L187.2 279.87L187.432 280.024L187.778 280.117L188.575 280.76L188.883 281.273L188.947 281.645L189.32 281.851L189.243 281.98L189.32 282.275L189.499 282.493L189.614 282.737L189.795 282.788L190.038 282.698L190.398 282.75L190.45 282.865L190.463 283.033L190.629 283.379L190.604 283.508L191.143 283.854L191.208 284.42L191.4 284.83L191.901 285.486L192.055 285.498L192.247 285.64L192.338 286.038L192.851 286.179L193.365 287.297L191.49 288.452L190.681 289.74L190.309 289.83L189.409 289.74L189.166 289.984L188.831 290.485L187.38 291.012L186.814 291.757L185.839 291.876L185.916 292.839L185.594 292.852L185.248 293.173L184.49 292.98L184.014 293.07L183.321 293.789L181.51 294.509L176.784 291.988L175.268 291.6L173.65 291.831L171.543 291.818L169.925 290.957L169.565 289.982L167.369 287.949L166.701 286.548L167.664 285.598L170.015 284.015L170.901 281.944L171.595 281.507H171.98L172.661 280.853L172.712 280.634L173.406 280.595L173.56 281.045L173.65 281.482L173.881 281.713L174.434 281.726L174.896 278.126L175.666 278.011L175.679 276.187V275.93L175.833 274.693L176.912 275.22L178.377 271.235L178.364 269.489L179.699 267.305L179.892 267.228L180.175 265.969L180.11 265.802L180.265 265.469L180.56 265.378L181.087 264.248L181.06 264.03L181.549 263.259L181.664 263.246L181.857 262.99L182.358 262.9L184.747 263.658L185.582 263.465L185.71 263.529Z" />
+          </g>
+
+          <!-- Provincia Cercado: sistema de coordenadas del "mundo" -->
+          <g id="capa-cercado">
+            <path id="cercado-contorno" fill-rule="evenodd" d="M324.078 52.0605L329.942 60.8149L333.125 69.5276L333.293 78.4077L330.948 85.4447L333.125 88.6282L334.633 98.8491L339.995 105.425L342.843 112.629L343.681 121.343L346.864 124.861L342.006 138.265L336.979 138.768L335.471 142.16L327.093 150.873L326.758 153.889L324.245 157.073L325.921 160.926L326.088 165.114L323.239 168.465L321.732 196.991L318.883 200.175L318.716 207.714L320.391 212.573L315.365 219.61L320.391 220.113L326.256 229.705L329.44 229.872L339.492 247.633L341.838 255.508L344.519 260.199L343.514 265.226L346.53 267.237L351.053 268.451L361.441 276.829L365.463 283.531L366.3 288.39L371.159 291.07L370.154 292.746L371.159 296.599L373.505 299.448L375.013 302.632L377.358 303.301L380.542 302.129L385.233 302.798L385.904 304.307L386.071 306.485L388.249 311.008L387.914 312.684L394.951 317.208L395.789 324.581L398.302 329.942L404.837 338.487L406.847 338.655L409.361 340.498L410.533 345.691L417.236 347.535L423.937 362.112L399.475 377.191L388.92 393.988L384.061 395.16L372.332 393.988L369.148 397.171L364.792 403.706L345.859 410.575L338.487 420.293L325.753 421.843L326.758 434.409L322.57 434.577L318.046 438.765L308.16 436.252L301.961 437.425L292.914 446.808L269.289 456.191L207.631 423.309L187.859 418.24L166.748 421.256L139.27 421.089L118.159 409.863L113.468 397.13L84.8165 370.615L76.1039 352.351L88.6705 339.953L119.332 319.302L130.893 292.285L139.94 286.588H144.967L153.847 278.044L154.517 275.195L163.565 274.692L165.576 280.556L166.748 286.253L169.764 289.269L176.969 289.436L183.001 242.481L193.053 240.973L193.221 217.181V213.83L195.232 197.703L209.306 204.572L228.407 152.59L228.239 129.803L245.664 101.32L248.177 100.315L251.864 83.895L251.026 81.7168L253.036 77.3605L256.89 76.1876L263.759 61.4433L263.424 58.5949L269.791 48.5419L271.299 48.3744L273.813 45.0233L280.347 43.8505L311.511 53.736L322.402 51.2227L324.078 52.0605Z" />
+            <g id="cercado-detalle">
+              <g id="avenidas">
+                <path id="america" d="M277.972 201.461L233.428 198.726" />
+                <path id="melchor-perez" d="M245.649 216.924L246.63 207.855L246.958 199.023L246.988 195.886L246.839 193.418L248.087 189.448L248.176 188.467L250.377 185.345" />
+                <path id="heroinas" d="M304.995 229.146L263.113 236.663" />
+                <path id="belzu" d="M301.14 222.568L299.97 226.856L300.683 229.948L308.398 246.865" />
+                <path id="juan-rosa" d="M271.542 211.192L270.59 210.984L269.906 211.074L269.044 211.787L265.149 212.472L264.197 212.709L258.636 209.765" />
+                <path id="libertadores" d="M272.642 214.642L267.914 198.421" />
+              </g>
+              <g id="rios">
+                <path id="rio-rocha" pathLength="1" d="M370.35 243.471L367.501 244.728H362.222L357.531 242.214H354.012L352.504 240.79L347.142 241.376L341.361 235.428L339.434 234.255L338.512 230.066L337.339 227.553L337.758 224.955L331.223 215.907L324.353 212.472L323.599 208.785L320.164 203.591L317.483 203.088L314.216 203.842L310.11 206.607L308.811 207.612L271.026 216.996L269.518 218.337L268.429 220.431L261.454 235.952L258.437 251.87L247.797 264.438L244.781 266.365L238.917 267.202L230.873 275.581L229.847 278.618L218.704 290.849L212.085 294.284L200.083 297.301L189.695 295.877L183.411 296.379L173.44 288.588L167.241 277.863L162.13 273.256L160.182 272.585L157.25 273.675L153.228 273.925L150.715 273.507L148.201 270.993L145.939 270.742L143.426 268.815" />
+                <path id="rio-tamborada" pathLength="1" d="M212.099 294.327L215.465 294.465L220.513 293.969L232.512 297.61L233.346 298.803L234.229 301.34L234.394 302.361L234.974 302.748L236.629 301.616L239.304 302.113L239.773 301.423L239.166 299.961L238.642 299.327L238.835 298.748L239.497 298.168L240.518 295.493L241.235 295.189L242.035 295.299L242.366 295.851L241.815 297.617L242.104 298.444L242.848 298.858L243.621 298.555L244.283 297.81L244.421 297.369L243.98 297.038L244.008 296.376L245.221 295.548H247.179L248.007 296.541L249.165 296.072L250.352 296.21L250.821 296.596L251.29 298.141L252.393 299.437L252.117 300.485L251.952 301.589L251.483 303.161L251.814 304.816L253.924 305.623L255.193 306.175L258.64 309.181L260.158 309.485L260.71 309.015L261.289 309.236L261.868 309.319L262.033 309.595L266.895 313.078L274.26 315.008L278.404 317.139L281.853 317.966L284.059 317.773L286.514 318.684L290.162 318.573L292.093 319.429L295.879 319.264L300.485 318.215L301.926 318.766L306.974 324.09L307.864 325.531L308.995 326.801L309.215 329.448L315.642 336.372L316.284 337.069L321.442 338.558L323.18 339.124L324.118 340.944L326.987 342.433L327.759 344.034L327.263 346.957L330.793 350.102L333.386 351.867L334.434 354.956L336.199 356.336L336.751 357.495L338.131 357.66L339.841 361.963L343.04 359.591L344.806 360.197L345.303 362.956L350.102 366.376L350.544 369.963L350.213 371.948L349.108 374.1V376.362L348.226 379.065L351.812 380.499L353.688 382.872L361.26 387.574L365.066 387.685L366.06 389.119L368.045 390.278L368.873 391.602L371.3 389.45L373.231 389.34L375.162 390.389L375.272 392.485L374.555 394.856L374.955 395.864L377.658 396.801L380.637 398.125L380.858 400.057L381.465 402.539L382.513 403.918" />
+              </g>
+              <g id="lagunas">
+                <path id="lag-cona-cona" class="laguna" d="M199.057 224.264L198.942 225.897L199.057 226.002L199.025 229.667L194.166 229.405L194.114 229.542L193.832 229.552L193.883 224.159L194.103 224.054L199.057 224.264Z" />
+                <path id="lag-quenamari" class="laguna" d="M175.399 296.39L175.944 297.395L176.698 298.149L179.128 299.322L179.63 300.872L180.468 300.705L180.678 301.124L180.552 301.92L180.803 302.339L181.055 303.72L180.678 305.312L179.588 305.438L178.876 305.396L177.117 306.192L176.74 305.564L176.153 305.941L176.028 306.402L176.614 307.407L176.991 309.376L176.781 309.585L176.196 309.711L174.771 309.125L174.938 307.952L174.435 307.617L173.933 308.748L172.425 310.8L171.419 310.213L171.084 309.25L170.163 310.884L169.157 311.848L168.32 311.889L167.608 313.398L164.717 313.816L164.298 314.278L163.67 313.607L161.575 313.816L161.743 314.319L160.821 314.654L160.528 312.183L160.863 311.596L161.827 311.387L162.539 311.638L163.628 310.884L165.974 310.13L167.817 308.203L169.073 305.019L169.995 305.103L169.702 301.626L170.414 299.657L171.043 298.987L173.179 298.275L173.137 297.395L173.473 297.227L173.179 296.851L175.399 296.39Z" />
+                <path id="lag-alalay" class="laguna" d="M313.545 246.32L314.132 246.236L314.928 246.445L315.975 247.702L316.939 248.959L316.561 249.168L316.436 249.755L316.812 250.341L317.274 250.09L318.07 250.174L318.782 252.813L319.159 253.315L318.446 254.278L318.782 254.949L317.86 256.248L318.07 257.504L317.86 257.84L318.154 258.51L318.111 259.264L317.274 260.102L316.729 260.605L316.896 261.107L317.524 261.149L319.326 260.982L318.446 261.61L318.111 262.07L319.033 262.364L319.368 262.657L320.415 262.866L321.128 262.532L322.091 262.699L322.384 263.201L324.563 264.123L324.981 263.453L325.4 264.04L327.034 265.128L328.584 266.385L329.045 268.354L328.877 268.563L329.087 272.334L327.872 272.124L326.364 272.878L326.112 273.758L325.4 274.344L323.892 273.675L323.18 272.753L322.677 272.376L319.829 273.381L313.336 273.172L313.085 273.381L307.806 272.334L306.675 273.004L305.921 272.544L303.617 268.941L303.114 264.709L302.151 261.401L299.093 257.085L297.208 253.693L296.453 253.106L296.286 250.886L296.58 250.299L299.47 249.796L302.361 250.215L304.288 251.011L307.094 249.587L309.356 247.828L311.367 247.032L311.66 247.535L312.958 247.241L313.545 246.32Z" />
+                <g id="ondas" aria-hidden="true">
+                  <circle class="onda" r="5" />
+                  <circle class="onda" r="5" />
+                  <circle class="onda" r="5" />
+                </g>
+                <g id="lag-cuellar" class="lago-foto" tabindex="0" role="button" data-lake="cuellar">
+                  <circle cx="269" cy="214" r="5" fill="url(#cuellar-cover)" />
+                </g>
+                <g id="lag-sarco" class="lago-foto" tabindex="0" role="button" data-lake="sarco">
+                  <circle cx="246.3" cy="196.5" r="5" fill="url(#sarco-cover)" />
+                </g>
+                <g id="lag-cuadras" class="lago-foto" tabindex="0" role="button" data-lake="cuadras">
+                  <circle cx="303.5" cy="228.3" r="5" class="sin-foto" />
+                </g>
+                <g id="lag-quenamari-circle" class="lago-foto" tabindex="0" role="button" data-lake="quenamari">
+                  <circle cx="170.5" cy="306.5" r="15" fill="url(#lag-quenamari-cover)" />
+                </g>
+              </g>
+              <g id="puentes">
+                <path id="p-recoleta" d="M283.574 209.45L288.38 208.495L287.418 210.822L287.403 210.858L287.411 210.896L288.154 214.754L288.161 214.787L288.183 214.813L289.875 216.811L285.59 217.707L286.111 215.201L286.116 215.176L286.111 215.152L285.369 210.974L285.36 210.927L285.324 210.896L283.574 209.45Z" />
+                <path id="p-quillacollo" d="M257.351 239.533L257.334 234.633L259.434 236.023L259.466 236.044L259.505 236.044L263.433 236.053L263.468 236.053L263.497 236.036L265.781 234.757L265.842 239.134L263.482 238.144L263.458 238.135L263.433 238.134L259.19 238.063L259.143 238.062L259.106 238.093L257.351 239.533Z" />
+              </g>
+              <g id="edificios">
+                <path id="campus-umss" d="M302.156 233.599L303.493 236.81L301.234 239.367L301.025 238.445L293.146 239.605L293.026 238.892L291.451 238.98L290.886 235.62L302.156 233.599Z" />
+                <path id="aeropuerto" d="M259.766 266.243L255.099 274.288L255.506 276.868L252.315 278.972L251.84 281.552L269.424 297.37L269.831 303.345L266.64 303.819L244.626 285.252L233.765 298.898L233.493 297.744L231.456 296.453L239.467 285.863L240.078 281.586L218.354 263.12L222.562 258.978L225.821 262.169L227.247 261.83L231.116 264.002L231.932 263.12L232.814 263.867L232.746 264.953L241.232 266.447H247.071L250.33 264.342L255.217 264.546L259.155 264.477L259.766 266.243Z" />
+              </g>
+            </g>
+          </g>
+        </svg>
+        <div class="mapa__etiquetas" aria-hidden="true"></div>
+        <p class="mapa__pista" aria-hidden="true">Toca las lagunas para ver fotos</p>
       </div>
-      <div class="meta center">
-        <a
-          href="https://labtecnosocial.org/lagunas-perdidas-cochabamba#referencias"
-          >Referencias</a
-        >
-        <a href="https://labtecnosocial.org/">Lab TecnoSocial - 2021</a>
+
+      <div class="pasos">
+        <section class="paso" id="sec-cercado">
+          <div class="paso__tarjeta">
+            <p>
+              En la provincia de Cercado, se contaba con un número incontable de
+              lagos y pequeñas lagunas. Muchas de ellas eran efímeras, es decir
+              que se llenaban de agua en época lluviosa para secarse poco tiempo
+              después.
+            </p>
+          </div>
+          <figure class="paso__cita">
+            <blockquote>
+              <p>
+                No es extraño que ésta fuera llamada, la tierra de las lagunas.
+                Innumerables eran espejos que saludaban al cielo.
+              </p>
+            </blockquote>
+            <figcaption>
+              Andrés Uzeda, <cite>¿Te acuerdas del río?</cite>
+            </figcaption>
+          </figure>
+        </section>
+
+        <section class="paso" id="sec-recuerdo">
+          <div class="paso__tarjeta">
+            <p>
+              Lastimosamente, este morir y renacer de las lagunas prácticamente
+              ha cesado. Muchas de las lagunas de Cochabamba son ahora tan solo
+              un recuerdo.
+            </p>
+          </div>
+        </section>
+
+        <section class="paso" id="sec-cuellar">
+          <div class="paso__tarjeta">
+            <p>
+              La <strong>Laguna Cuellar</strong> se ubicaba en cercanía de lo
+              que era en aquel entonces la campiña de la familia del mismo
+              nombre, en la zona de <strong>Cala-Cala</strong>. Los vecinos la
+              recuerdan rodeada de sauces en las riberas y con botes para
+              navegar.
+            </p>
+          </div>
+        </section>
+
+        <section class="paso" id="sec-estadio">
+          <div class="paso__tarjeta">
+            <p>
+              Hacia 1920, los predios de la laguna fueron
+              destinados a la construcción del
+              <strong>Estadio Félix Capriles</strong>. A medida que las canchas
+              de fútbol se extendían a los terrenos aledaños, la laguna fue
+              perdiendo terreno. Para <strong>1960</strong>, la laguna había
+              sido <strong>totalmente desecada</strong>.
+            </p>
+          </div>
+        </section>
+
+        <section class="paso" id="sec-sarco">
+          <div class="paso__tarjeta">
+            <p>
+              Un centro de recreación concurrido en el pasado, era la
+              <strong>Laguna Sarco</strong>. Se ubicaba al lado oeste del actual
+              <strong>Parque Lincoln</strong>, al norte de la actual avenida
+              América.
+            </p>
+          </div>
+          <figure class="paso__cita">
+            <blockquote>
+              <p>
+                En el espejo de la laguna de Sarco, al extremo Norte de la
+                ciudad, se refleja un paisaje acogedor.
+              </p>
+            </blockquote>
+            <figcaption>
+              Rodolfo Torrico Zamudio, <cite>ca. 1940-1950</cite>
+            </figcaption>
+          </figure>
+        </section>
+
+        <section class="paso" id="sec-gimnasio">
+          <div class="paso__tarjeta">
+            <p>
+              Actualmente la laguna de Sarco ya no existe. No
+              se pudo encontrar datos sobre el año de su desaparición. En el que
+              era su territorio, ahora tenemos un centro deportivo que lleva el
+              mismo nombre: <strong>Gimnasio Polifuncional Sarco</strong>.
+            </p>
+          </div>
+        </section>
+
+        <section class="paso" id="sec-cuadras">
+          <div class="paso__tarjeta">
+            <p>
+              La última de las lagunas perdidas que veremos es la laguna de
+              <strong>Las Cuadras</strong>. Se ubicaba en proximidades del
+              barrio que llevaba el mismo nombre (actual campus UMSS), al final
+              este de la <strong>avenida Heroínas</strong>.
+            </p>
+          </div>
+          <figure class="paso__cita">
+            <blockquote>
+              <p>
+                En la noche se caracterizaba por el fuerte sonido del croar de
+                las ranas. Los circos se asentaban ahí también.
+              </p>
+            </blockquote>
+          </figure>
+        </section>
+
+        <section class="paso" id="sec-teleferico">
+          <div class="paso__tarjeta">
+            <p>
+              Como muchas otras, la laguna de Las Cuadras es
+              ahora tan solo un recuerdo. En su antigua ubicación, ahora se
+              encuentra la <strong>estación del teleférico</strong> que sube al
+              Cristo. No se consiguió información sobre su extensión exacta ni
+              sobre el año de su desaparición.
+            </p>
+          </div>
+        </section>
+
+        <section class="paso" id="sec-tres-lagunas">
+          <div class="paso__tarjeta">
+            <p>
+              Sin hacer mención de muchas otras lagunas que
+              se perdieron, en la actualidad nos quedan tan solo tres lagunas:
+              <strong>Alalay</strong>, <strong>Coña Coña</strong> y
+              <strong>Quenamari</strong>. Todas ellas en
+              <strong>estado crítico</strong> y riesgo de secarse o incluso de
+              ser loteadas.
+            </p>
+          </div>
+        </section>
+
+        <section class="paso" id="sec-quenamari">
+          <div class="paso__tarjeta">
+            <p>
+              La situación de la Laguna de <strong>Quenamari</strong> es la más
+              preocupante. Ya en el 2016, se había reportado que su área se
+              redujo de 40 a tan solo <strong>4 hectáreas</strong>. Sin ninguna
+              Ley que la proteja, lo que queda de la laguna es reducido poco a
+              poco por <strong>loteamientos</strong>.
+            </p>
+          </div>
+        </section>
       </div>
-      <div class="code-div center row buttons">
-        <span class="hide-small">Código</span>
-        <a
-          id="github-code"
-          href="https://github.com/lab-tecnosocial/cocha-lagunas"
-          target="_blank"
-        ></a>
+    </main>
+
+    <!-- Artículo: servicios ecosistémicos -->
+    <article class="articulo" id="importancia-lagunas">
+      <header class="articulo__cabecera">
+        <h2>Los servicios ecosistémicos de las lagunas en Cochabamba</h2>
+      </header>
+
+      <p class="articulo__intro">
+        Pese a la presión de la urbanización y al descuido, las lagunas que
+        persisten en la ciudad cumplen funciones esenciales para el ecosistema
+        y para nuestro bienestar. Esos beneficios, conocidos como servicios
+        ecosistémicos, son la mejor razón para cuidarlas y preservarlas.
+      </p>
+
+      <section class="razon">
+        <h3>Refugio de biodiversidad</h3>
+        <p>
+          Las lagunas de Cochabamba albergan una gran riqueza biológica. En
+          ellas crecen muchas especies de plantas hidrófilas que atraen aves,
+          anfibios e insectos, hasta formar verdaderos micro-ecosistemas. Muchas
+          especies anidan, se alimentan y descansan en sus aguas en las
+          distintas estaciones del año. Estos pequeños cuerpos de agua son
+          indispensables para la reproducción de otras formas de vida y, además,
+          embellecen el paisaje urbano.
+        </p>
+        <figure class="foto foto--ancha">
+          <img src="img/alalay-aves.png" alt="Aves en la Laguna Alalay. Los Tiempos" width="600" height="335" loading="lazy" />
+          <figcaption>Aves en la Laguna Alalay. Los Tiempos</figcaption>
+        </figure>
+        <figure class="foto foto--ancha">
+          <img src="img/quenamari-flamencos.jpg" alt="Flamencos en la laguna de Quenamari" width="770" height="430" loading="lazy" />
+          <figcaption>Flamencos en la laguna de Quenamari. Los Tiempos. Daniel James.</figcaption>
+        </figure>
+      </section>
+
+      <section class="razon">
+        <h3>Reguladoras del clima</h3>
+        <p>
+          <a href="https://www.redalyc.org/jatsRepo/4779/477950133016/html/index.html" target="_blank" rel="noopener">Como indican varias investigaciones,</a>
+          las lagunas ayudan a mitigar los efectos del cambio climático en la
+          ciudad. Absorben la radiación solar y hacen que las temperaturas de su
+          entorno sean más bajas, lo que alivia el calor urbano, que tiende a
+          ser mayor por la cobertura de concreto, las edificaciones y la
+          circulación vehicular.
+        </p>
+        <p>
+          En una ciudad como Cochabamba, llena de concreto y ladrillo, con muy
+          pocos árboles y que en los últimos años ha registrado temperaturas
+          cada vez más altas, contar con lagunas es una de las soluciones más
+          poderosas frente al calor excesivo.
+        </p>
+        <figure class="foto foto--ancha">
+          <img src="img/alalay.jpg" alt="Laguna de Alalay. Los Tiempos." width="770" height="430" loading="lazy" />
+          <figcaption>Laguna Alalay. Los Tiempos.</figcaption>
+        </figure>
+      </section>
+
+      <section class="razon">
+        <h3>Defensa natural contra inundaciones</h3>
+        <p>
+          Las lagunas son, además, zonas naturales de inundación. En época de
+          lluvias contienen las crecidas de agua y protegen a barrios y
+          viviendas de inundaciones y desbordes. Por eso, rellenar o lotear sus
+          terrenos es una mala idea: aunque se drenen y sequen, esas tierras
+          corren el riesgo de volver a inundarse en una temporada de lluvias
+          intensa.
+        </p>
+        <figure class="foto foto--ancha">
+          <img src="img/cona-cona.jpg" alt="Coña Coña a su nivel máximo de agua" width="770" height="430" loading="lazy" />
+          <figcaption>Laguna de Coña Coña con un nivel óptimo de agua tras las lluvias</figcaption>
+        </figure>
+      </section>
+
+      <p class="articulo__cierre">
+        Cada laguna que desaparece se lleva consigo estos servicios. Cuidar
+        Alalay, Coña Coña y Quenamari es, en el fondo, cuidar la calidad de vida
+        de quienes habitamos el valle.
+      </p>
+
+      <hr class="separador" />
+
+      <p>
+        En algunos rincones, todavía no muy alejados del radio urbano, aún se
+        encuentran vestigios del espacio natural que alguna vez adornó el valle
+        de Cochabamba.
+      </p>
+      <figure class="foto foto--ancha video">
+        <div class="video__marco">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/AE9VPEhzXhA"
+            title="Patitos en Tiquipaya"
+            loading="lazy"
+            allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <figcaption>Una pequeña laguna en proximidades de la zona de Tiquipaya. Abril del 2021.</figcaption>
+      </figure>
+
+      <section class="anexo" id="referencias">
+        <h2>Referencias</h2>
+        <ul>
+          <li><a href="https://www.facebook.com/carlos.crespo.3766952/posts/1312509352434664" target="_blank" rel="noopener">Elementos para una historia ambiental del río Rocha, Un enfoque ecocrítico y biorregioonal</a>. Carlos Osbaldo Crespo Flores. Laura Irma Crespo Peñaranda. Centro AGUA-UMSS (2020).</li>
+          <li><a href="https://www.youtube.com/watch?v=u76lqPwpxmo" target="_blank" rel="noopener">Historia Laguna Cuellar</a>, documental TVU (2014).</li>
+          <li><a href="https://www.youtube.com/watch?v=IE0L62sa_jM" target="_blank" rel="noopener">La Laguna de Quenamari</a>, documental TVU (2014).</li>
+          <li><a href="https://www.facebook.com/AhoraHistoriasyLeyendasDeCochabamba/posts/2736536806594073/" target="_blank" rel="noopener">La Laguna Cuellar y la construcción del emblemático estadio Félix Capriles</a>, Ahora: historias y leyendas de Cochabamba.</li>
+          <li><a href="https://www.lostiempos.com/actualidad/cochabamba/20171122/30-anos-ciudad-perdio-4-lagunas-urbanas-hay-3-riesgo" target="_blank" rel="noopener">En 30 años, la ciudad perdió 4 lagunas urbanas y hay 3 en riesgo</a>, Los Tiempos.</li>
+          <li><a href="https://lostiempos.com/actualidad/local/20150117/ciudad-perdio-cuatro-lagunas-urbanas-mas-medio-siglo" target="_blank" rel="noopener">La ciudad perdió cuatro lagunas urbanas en más de medio siglo</a>, Los Tiempos.</li>
+          <li><a href="https://lostiempos.com/actualidad/cochabamba/20171119/laguna-quenamari-esta-seca-vecinos-nivelan-tierra-sembrar" target="_blank" rel="noopener">La laguna Quenamari está seca y vecinos nivelan la tierra para sembrar</a>, Los Tiempos.</li>
+          <li><a href="https://www.opinion.com.bo/articulo/cochabamba/viviendas-invaden-laguna-quenamari-buscan-frenar-loteos/20190614012000652232.html" target="_blank" rel="noopener">Cinco viviendas invaden la laguna Quenamari y buscan frenar loteos</a>, Opinión.</li>
+          <li><a href="https://www.lostiempos.com/actualidad/cochabamba/20190504/tres-anos-no-hay-ley-proteccion-quenamari" target="_blank" rel="noopener">En tres años no hay ley de protección de Quenamari</a>, Los Tiempos.</li>
+          <li><a href="https://www.lostiempos.com/galeria-fotografica/flamencos-realzan-paisaje-laguna-quenamari_445973" target="_blank" rel="noopener">Flamencos realzan el paisaje en la laguna de Quenamari</a>, Los Tiempos.</li>
+          <li><a href="https://www.facebook.com/media/set/?vanity=JAVIERVERAMONZON&amp;set=a.1856845357898558" target="_blank" rel="noopener">Fotografías laguna de Coña Coña</a>, por Javier Vera Monzón.</li>
+        </ul>
+      </section>
+
+      <section class="anexo" id="creditos">
+        <h2>Créditos</h2>
+        <p>
+          Todas las fotografías en blanco y negro fueron hechas por
+          <a href="http://fundacionculturaltorricozamudio.blogspot.com/p/rodolfo-torrico-zamudio-1890-1955.html" target="_blank" rel="noopener">Rodolfo Torrico Zamudio</a>.
+          Excepción de la fotografía de la Laguna Cuellar del año 1925, cuyo
+          autor desconocemos.
+        </p>
+      </section>
+    </article>
+
+    <footer class="pie">
+      <div class="pie__marcas">
+        <a class="pie__marca" href="https://labtecnosocial.org/" target="_blank" rel="noopener">
+          <img src="img/logo-labtecnosocial.png" alt="Lab TecnoSocial" width="576" height="286" loading="lazy" />
+          <span>labtecnosocial.org</span>
+        </a>
+        <a class="pie__marca" href="https://conchuwis.com/" target="_blank" rel="noopener">
+          <img src="img/logo-conchuwis.webp" alt="Con Chuwis" width="583" height="267" loading="lazy" />
+          <span>conchuwis.com</span>
+        </a>
+      </div>
+      <div class="pie__meta">
+        <a href="#referencias">Referencias</a>
+        <a href="https://github.com/lab-tecnosocial/cocha-lagunas" target="_blank" rel="noopener">Código</a>
       </div>
     </footer>
 
-    <div id="cocha-map-container" class="map-container center top hidden">
-      <img
-        id="collage"
-        class="hidden"
-        alt="Aves en las lagunas Alalay, Coña Coña y Quenamari"
-      />
-      <svg
-        id="cocha-svg"
-        width="500"
-        height="500"
-        viewBox="0 0 500 500"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          id="cocha-svg-caption-cercado"
-          d="M183 250V 260 "
-          fill="#EDE6E3"
-        />
-        <path
-          id="cocha-svg-cocha"
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M364.067 74.3658L365.399 100.443L370.932 124.882L374.211
-        140.252L372.776 146.861L369.293 165.511L361.915 167.56L355.152
-        192.562L356.792 201.989L362.12 217.615L370.113 221.509L369.908
-        227.042L378.105 231.755L388.556 237.289L394.09 243.027L405.566
-        246.101L408.435 250.2L414.583 252.044L416.838 256.962L414.994
-        259.627L418.067 259.832L424.011 260.037L421.551 262.496V264.135L426.674
-        268.234L426.264 275.612L425.65 278.891L424.83 281.76H422.166L420.936
-        283.195L418.477 282.99L416.838 281.76L412.944 282.169L410.279
-        285.244H408.23L406.181 284.834V287.498L405.976 292.826L404.132
-        293.441L402.902 296.105L403.722 298.872L403.107 302.151L399.213
-        305.02L391.836 304.61L390.196 303.586H385.688L382.409 306.249L379.744
-        311.783L376.465 312.603L376.875 317.931L368.473 318.955L367.038
-        320.39L361.915 322.03L358.021 332.891L353.308 346.007L363.349
-        359.533L366.014 359.942L365.194 363.426L370.318 368.14L378.105
-        367.115L382.819 369.369L390.196 374.288L395.32 388.633L397.573
-        396.011L401.877 396.831L401.672 401.749L406.386 411.996L412.739
-        415.275L417.452 418.554L422.986 431.669L417.452 434.539L417.042
-        440.072H413.968L411.714 433.924L404.132 435.153L400.238 439.252L392.655
-        441.097H386.098L385.483 438.842L378.515 435.973L375.646 429.006L373.392
-        428.391L368.678 423.677L357.612 422.575L355.459 417.862L351.463
-        417.247H345.213L339.885 421.039L335.581 424.625L330.97 425.855L327.486
-        430.158L324.719 432.72L323.388 436.102L326.359 440.2L325.641
-        442.044L319.391 439.791L317.034 439.38L317.546 437.126L310.682
-        433.54L303.816 435.076L303.714 433.335L300.537 433.95L297.77
-        431.901L299.103 424.83L298.795 419.809L294.799 419.912L292.442
-        419.092L292.954 413.456L290.086 411.509L288.343 414.686L287.114
-        413.968L287.216 409.255L276.764 401.467L275.74 402.902L271.026
-        399.316L268.977 394.193L265.903 388.147L260.575 387.02L254.734
-        381.896L248.586 373.263L227.273 356.766L221.637 351.617L219.178
-        351.822L212.108 354.384L209.853 352.539L209.648 350.183L208.316
-        348.44L207.497 349.567L203.398 347.006L203.193 345.161L195.303
-        333.275L188.54 329.97L185.671 331.918L185.261 335.812L187.003
-        337.656L174.4 346.878L173.068 348.825L170.506 349.132L170.096
-        347.186L168.456 347.595L165.588 351.899L162.411 351.694L161.899
-        350.157L158.62 348.313L153.087 349.44L146.528 353.641L142.635
-        354.153L138.638 357.637L138.946 359.584L135.667 362.248L136.077
-        364.195L129.724 365.425L124.293 367.678L121.834 370.445H115.276L113.534
-        371.572H112.099L111.587 370.138L109.742 369.933L106.669 371.265L102.775
-        371.983L100.623 368.396L99.1887 367.884L98.6764 365.629L101.135
-        364.605V362.658L99.1887 360.916L97.3438 359.994V358.559L98.7789
-        358.661L100.52 357.227L101.75 357.432L104.927 354.46L103.8
-        351.592L105.234 346.135L102.365 342.446L102.468 341.114L107.489
-        341.217L108.206 342.446L111.075 341.114L110.768 339.782L108.718
-        337.835L109.435 334.351L106.669 334.556L103.492 328.613L100.418
-        328.818L100.623 326.154L91.1961 323.388L92.1182 321.133L83.9208
-        309.733L85.0476 309.119L83.4085 305.635L86.995 300.793L85.6632
-        298.129L88.3268 297.617L90.1717 299.051L90.9912 296.183L94.5777
-        295.465L95.7046 294.747L97.856 292.903L95.4997 284.501L92.2206
-        283.066L90.3766 280.197L91.5035 277.226L93.5524 276.278L94.7826
-        267.978L88.6341 265.314L88.5317 261.523L90.5814 258.243L88.9415
-        254.964L88.0194 244.513L85.9705 241.746L83.5109 241.644L76.5432
-        233.241L74.2889 225.531L73.9815 220.92L78.2851 217.436L77.363
-        215.08L84.5357 206.139L95.3973 207.061L101.955 202.629L107.898
-        196.277L107.796 192.69L104.722 188.796L107.386 183.878L108.513
-        175.168L102.673 166.125L104.722 164.691L102.057 162.129L99.9058
-        136.487L93.1426 131.26L94.3728 124.805L84.8427 111.254V108.692L85.5607
-        107.873L84.6381 99.2657L85.7656 98.5477L85.5607 96.1915L90.7863
-        91.2469L88.4292 86.9433L89.9668 85.6115L86.8925 80.6931L86.3803
-        77.3117L99.8033 58.0478L114.558 74.0583L130.953 104.082L144.889
-        123.986L167.227 139.355L189.462 150.448L199.504 152.907H213.132L237.212
-        144.197L245.922 139.074L259.652 130.365L262.009 126.957L271.026
-        105.849L283.015 86.0729L297.668 74.4682L300.742 72.9312L305.148
-        72.7263L316.42 74.6732L364.067 74.3658Z"
-          stroke="#36382E"
-          fill="#5BC3EB"
-          stroke-width="1"
-          stroke-linecap="square"
-          stroke-linejoin="bevel"
-        />
-        <path
-          id="cocha-svg-cercado"
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M185.71 263.529L186.16 264.201L186.404 264.868L186.416 265.548L186.237 266.089L186.404 266.332L186.52 267.116L186.93 267.62L187.149 268.172L187.213 268.84L187.457 269.109L187.084 270.137L186.699 270.175L186.583 270.436L185.941 271.103L185.916 271.335L185.723 271.579L185.852 271.875L185.864 272.196L185.646 272.452L185.53 274.639L185.312 274.883L185.299 275.461L185.428 275.834L185.042 276.373L185.428 276.411L185.877 277.147L186.121 277.16L186.891 278.521L187.072 279.125L187.278 279.485L187.2 279.87L187.432 280.024L187.778 280.117L188.575 280.76L188.883 281.273L188.947 281.645L189.32 281.851L189.243 281.98L189.32 282.275L189.499 282.493L189.614 282.737L189.795 282.788L190.038 282.698L190.398 282.75L190.45 282.865L190.463 283.033L190.629 283.379L190.604 283.508L191.143 283.854L191.208 284.42L191.4 284.83L191.901 285.486L192.055 285.498L192.247 285.64L192.338 286.038L192.851 286.179L193.365 287.297L191.49 288.452L190.681 289.74L190.309 289.83L189.409 289.74L189.166 289.984L188.831 290.485L187.38 291.012L186.814 291.757L185.839 291.876L185.916 292.839L185.594 292.852L185.248 293.173L184.49 292.98L184.014 293.07L183.321 293.789L181.51 294.509L176.784 291.988L175.268 291.6L173.65 291.831L171.543 291.818L169.925 290.957L169.565 289.982L167.369 287.949L166.701 286.548L167.664 285.598L170.015 284.015L170.901 281.944L171.595 281.507H171.98L172.661 280.853L172.712 280.634L173.406 280.595L173.56 281.045L173.65 281.482L173.881 281.713L174.434 281.726L174.896 278.126L175.666 278.011L175.679 276.187V275.93L175.833 274.693L176.912 275.22L178.377 271.235L178.364 269.489L179.699 267.305L179.892 267.228L180.175 265.969L180.11 265.802L180.265 265.469L180.56 265.378L181.087 264.248L181.06 264.03L181.549 263.259L181.664 263.246L181.857 262.99L182.358 262.9L184.747 263.658L185.582 263.465L185.71 263.529Z"
-          stroke-width="1"
-          stroke="#36382E"
-          stroke-linecap="square"
-          stroke-linejoin="bevel"
-        />
-      </svg>
-    </div>
-
-    <div id="cercado-map-container" class="map-container center hidden">
-      <svg
-        id="cercado-svg"
-        width="500"
-        height="500"
-        viewBox="0 0 500 500"
-        fill="rgba(0,0,0,0)"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <defs>
-          <pattern
-            id="cuellar-cover"
-            patternUnits="objectBoundingBox"
-            width="10"
-            height="10"
-          >
-            <!--cuellar-thumbnail.jpg-->
-            <image
-              alt="cuellar-thumbnail"
-              x="0"
-              y="0"
-              width="10"
-              height="10"
-              href="data:image/jpeg;base64,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"
-            />
-          </pattern>
-          <pattern
-            id="estadio-cover"
-            patternUnits="objectBoundingBox"
-            width="10"
-            height="10"
-          >
-            <!--estadio-thumbnail.jpg-->
-            <image
-              href="data:image/jpeg;base64,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
-"
-              x="0"
-              y="0"
-              width="10"
-              height="10"
-            />
-          </pattern>
-          <pattern
-            id="sarco-cover"
-            patternUnits="objectBoundingBox"
-            width="10"
-            height="10"
-          >
-            <!--sarco-thumbanil.jpg-->
-            <image
-              href="data:image/jpeg;base64,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
-"
-              x="0"
-              y="0"
-              width="10"
-              height="10"
-            />
-          </pattern>
-          <pattern
-            id="complejo-sarco-cover"
-            patternUnits="objectBoundingBox"
-            width="10"
-            height="10"
-          >
-            <!--"img/complejo-sarco-thumbnail.jpg"-->
-            <image
-              href="data:image/jpeg;base64,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
-"
-              x="0"
-              y="0"
-              width="10"
-              height="10"
-            />
-          </pattern>
-          <pattern
-            id="estacion-teleferico-cover"
-            patternUnits="objectBoundingBox"
-            width="10"
-            height="10"
-          >
-            <!--"img/estacion-teleferico-thumbnail.jpg"-->
-            <image
-              href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASwBLAAD/2wBDAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4+JS5ESUM8SDc9Pjv/2wBDAQoLCw4NDhwQEBw7KCIoOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozv/wAARCABkAGQDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwC+moyRaLe3sSGxt7eCQJCT88jONis59fmyF7YrPsrYQWcMQGNqDP171iP4wt77SPsDw+S0tyjyMWypRc8dMjJNbVnq1rdYUsEY+jhx69VJA/HFfR4bkjOTv95wVLtIsiOnCP2qSF4p13RSJIvqjAj9KmCV385jYreX7UjR47Vb2UhjyKXOFilt9qaY6ueTSGOq5wKRjqNo/ar5iqNovaqUgKDR1E0dX2j9qheOquBSMdFWCnNFFwPPru406dd9pbvbMq4KK5YFvXntTNOF5dXAS1H7xRncXCYP1JArWHhDVrx/tMsUNv5jbmDAoBnnPAwB7ZqXVPBl/p9ss8aNPltpES78DHB9cceg7V83GM97HY2th39pavp8qG+t5AU6NNGfm/4EPvD6k1sWHi6M7VmDKpPJzuwPr/TBrnrnU9XhtIrNrzMCKFVVJUj2Ixu496zv9JuZXcxmVsAsyqcgdMn8a19o4vQjlueuWk0d5brPbyrLE3Q4IzUxVgeUOMdQa870XxPqmnW6WiQpKqbjsZOcck9K6ax8c6bPbB7tXglzgoAW49a6o1k+pk4M3cL0zj0zxmjZ6VaQLIiupyrDIPtTWgUnJXn1HWtVNk2KpSmNHVz7OcbtxC4Y5YjGAMnk+g5qq4nDMUCyKMYBUqc+59Pwo9vFbjUWyBo6ikgITeVO3OM44qxKZ12jHllu4AyMemc57+nTii5ETajcEMWk3BMtnOFAXv7qT+NEcQ5SUYoHCyuygY+aKtlOaK7OYyJdKMtxpcMsU25XXKNKnJXt0PX861VjGMDGO2K88stJ8U21qRDLdhflWFEY4YHv/sj64rZ0638Xm4svPWXyonHmfMoymRkHJ+bivHVTyOlxOsaBXA3KGx0yM1jnTLOZ9ThmtY5NjCVBsGeUBH6qa3sTEZWEL/vvg/oD/OslvMaHW7h9o+Ty1K8glU6fm2PrTckyUrCr4e0pnM8VuFaRNu9WPKkY/lWYngWyWAW5uZmhEm/btTJPT72M9K0/DdjewWDR3N48jJI0e0jIXaccE81sfZj3lc/kP5CpuuxWvcopZvHGscdzIqoAB8qnj8qaYJUOXuTjLKeB1zkfp/KtAQKh3Zb0+ZiRWbqUMV/btbRMFMkyAOBnaBwWH4nH5+lKU7NNDirhGSsyGSZ/LLFedhBB4wOO9VJZIIbp4DqG+SLJ2xtkkZxyFHp+eRVX/hCsu3majK0bDDKIwCR9fwFR22j2FlfSW9pvuJdpLRMw6Lj056kduoNZT5lqXG2xSufEMU7tb6dp1xdzK/PmAldvY7evp1xisKXQdfnuJZzbeUksmSquPlBPYZ7ZrpPCNpAWvJhFhzIUBP8ACo6D9f0FdG8W4Y5/A4rWnDmV2yJStojl7DQbq1thGdQlPfkHI46daK6MwL/tf99GiuxJIxuzZit1RAij5VGB9KlEXtViOOsDxZNqsBhGll18r95K0alsegI6YrzufWxtYyfHtxc2MVhPCr+XHKWcqxUHphTjnnmoPB0M2pT3FzdWksdkdslunmN5KsOvBPJzzz71zOv65qWowLa3lzuVCCVAxk+tL4ev9NtYQlz/AGrHO5wJLSZSP++cD+tRKdnYtR0PWLe2SNG2LtDuz49yck027nt7GBp7mVYo1GST/h3ql4NvRqGhqWuZbiWORlkM33xycZ5PbFTeIreS70hzbggBiry7M7Vwd2PbtkU1LWxNirfy22q6VItpqUCq2CXVwemGAI+oHH4Vm+HdUsRZw2kkv79pAoZowFdi3ADDIPtz+FcjY6WNWvpILe5DIo3NIUPr6GrRX/hH71oor+WIqyOg3Aq2cg5HTIbafpmhqS97oX7rXKdfreoz6fIgiTOOSNu4MPr2rBvNZuZLhLq0tDbTfe3qwBdV6/e69c9PSrfiDWYLzSoJ7fCyXEGZcc4IzxXBaxrl4HtmzuaANGXToV+mOOKynODWsmVGMl0O08J3atJqkly4RhNucuAvJzngcdugrRvPENlCpEJ85+2OBXBaRczTTyqdxMo3dSSSAP1wTV1Xj8ty0g3fwbRkfnWDxkoq0S1Ri3dmnL4gvZH3IZMekcJYD9KKyjqLjGZvKHZVZVGPxNFYfWKvdl8sOx6FpuvSzzx24kDM7BRkgmu0mit0tv3xACj73fNeS6JfxQ3yy5KrEzFf9racV0d/4n823xsIjEWTuHVsA9fxrtrOMmrMyScbo8/8QfYn1K4SMEhZiN3TIz3/AArOj1hk063tGYkRTiVRtXGQc/Xuaxr7Una7kc4OXJ/WrUDxLp8gZC0r42t/dFZVKqTve24Rizp9H8TfZdVuZ4p3eGYAvsBXJ9MV3P8AwlouPDvmhsZLggnHHAGT+NeLWsktuU3xnLyAbR3yDXomgXFvp9rc2WpW8Xmx4lRioYjsV/Ln8DXLicW6dNziuaxtTpKTs9DE13XZ5H+2WkircAbcQDjHToPqaw7XUZb5rhrsFXjhbBUYye2f1rrtZ1W2u9Ne2tkLFmByExxnNcwkTGR8goNuMkYFclLMKlWD5o2N54eMXozrPDmuaTb6bPaz26m5icsh8sElCMnB7YxmqviO8/tPy2jhEaRA/eZRkmsMWbS36rBHuYlULHj72QSa9E1W3uV8BTXvlptmtovLdI0B+bG7oM/jWH1GE6ntm3djVZqPIcPbWH2K7e3u18qZYg/znHB249jkGppOUZrfa645KMpx+RqTxXMseo2M1yF2zabAWGc7sKMfmVFcddXCmVhEcqWOOvSvQ9kkrIx5r7mhNcoJWEjDdnn93v8A1NFYjSsDwM/U0VfIRodL4d1WG11i3hv28yB32tyy4Dceg6da765s9KAkb7FCcKcEjJ/WvF5rjdMWU1t2up61d2rFDPJGqhdwBwTkDBP41wY3DVa0k6crHTSnGEfeQ2eKGVpN8a4ye3So0LPbKcDLMDj6mrM+lzpbr5zsryrkIgDHpzuOeP8APSm29vJuHmCU8HbjaoBwcZyOmcVqsPVaI9pAkht18wzyf8scOPqDx/OuqstY+xahNc6ro73E8ke8eexTD8fN9326fzrA0RA08i3txBtUbZAW4wSM9K77XdV0fWvEljqEepQrBbtGZEaUoXAbJ4xg/nWsYOEbPcmT5ndHGTXZWQyCD5C24LuyDz0z1/KtG0mnULcw205aNdjGMBlYnjByuO9dvNqWj3Vm0NtJasQmEIlQ7Tjg9ap6G9nbWVzb3Fw2XuGZTE5XA7frk8UrdybM5OR0tVjdtNcOWP8ArAwbpkEYIGTzXUW8Eg0oWupxtIbgv9mG5vLjwCQGGeO351T8USPq95GLaOXaqKcsh5OSM8fUVrxahGmhrDNbTyPHCWLbGwWI9cdqd1YqK1seQ+Ltae+vTKAFWNRBCoPCoowMfz/GuW86XOfMbP1rX8R23kX7xJkqjsFyOo7VjtG6/eUjPtXRcztZ6iFixySST3NFSrbuB84KmikMlWJeOTWomqXbacbLzNsEEZKKoxyXXJzRRVklIX11gIJ5Ao6AMeK0LO0W6AeWWVjnruoooEblvolsqMBJLhxg8j1B9PaqssMdq+FQOAcfP/8AWoopgjbsVZLNZo3MbDptVePxxmus0jRU1DS4p5b67VmJ4R1AGCf9miioZQx9AiGq+Sb28KqhI+dfUe1WG0G3hjaQXF0xQEjdLwcf/qoorMqPxHmnjz9xqIMYA3RI5+tckbyY9dp4I6UUU47Glb+LL1FN5OcfMBj0FFFFUZH/2Q=="
-              x="0"
-              y="0"
-              width="10"
-              height="10"
-            />
-          </pattern>
-          <pattern
-            id="estacion-teleferico-cover"
-            patternUnits="objectBoundingBox"
-            width="10"
-            height="10"
-          >
-            <!--"img/estacion-teleferico-thumbnail.jpg"-->
-            <image
-              href="data:image/jpeg;base64,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"
-              x="0"
-              y="0"
-              width="10"
-              height="10"
-            />
-          </pattern>
-          <pattern
-            id="estacion-teleferico-cover"
-            patternUnits="objectBoundingBox"
-            width="10"
-            height="10"
-          >
-            <!--"img/estacion-teleferico-thumbnail.jpg"-->
-            <image
-              href="data:image/jpeg;base64,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"
-              x="0"
-              y="0"
-              width="10"
-              height="10"
-            />
-          </pattern>
-          <pattern
-            id="estacion-teleferico-cover"
-            patternUnits="objectBoundingBox"
-            width="10"
-            height="10"
-          >
-            <!--"img/estacion-teleferico-thumbnail.jpg"-->
-            <image
-              href="data:image/jpeg;base64,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"
-              x="0"
-              y="0"
-              width="10"
-              height="10"
-            />
-          </pattern>
-          <pattern
-            id="lag-quenamari-cover"
-            patternUnits="objectBoundingBox"
-            width="30"
-            height="30"
-          >
-            <image
-              href="data:image/jpeg;base64,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
-                         "
-              x="0"
-              y="0"
-              height="30"
-              width="30"
-            />
-          </pattern>
-        </defs>
-
-        <g id="cercado-svg-captions">
-          <path id="cercado-svg-caption-rocha" d="M319 198V202" />
-          <path
-            id="cercado-svg-caption-recoleta"
-            d="M285.896 203.705V205.705"
-          />
-          <path id="cercado-svg-caption-libertadores" d="M274 207V210" />
-          <path id="cercado-svg-caption-juan-rosa" d="M250 203V210" />
-          <path id="cercado-svg-caption-cuellar" d="M261 223V225" />
-          <path id="cercado-svg-caption-quillacollo" d="M261.602 244V246" />
-          <path id="cercado-svg-caption-america" d="M258 203V210" />
-          <path id="cercado-svg-caption-melchor-perez" d="M243.5 217V220" />
-          <path id="cercado-svg-caption-sarco" d="M240 188V193" />
-          <path id="cercado-svg-caption-belzu" d="M309 241V245" />
-          <path id="cercado-svg-caption-campus-umss" d="M297 237V245" />
-          <path id="cercado-svg-caption-heroinas" d="M280 231V245" />
-          <path id="cercado-svg-caption-cuadras" d="M305 220V225" />
-          <path id="cercado-svg-caption-cona-cona" d="M196.4 216.5V219" />
-          <path id="cercado-svg-caption-alalay" d="M315 281V282" />
-          <path id="cercado-svg-caption-quenamari" d="M173 324V325" />
-          <path id="cercado-svg-caption-aeropuerto" d="M245.194 278V284" />
-          <path
-            id="cercado-svg-caption-tamborada"
-            d="M252.117 317.129V319.129"
-          />
-        </g>
-        <path
-          id="cercado-svg-cercado"
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M324.078 52.0605L329.942 60.8149L333.125 69.5276L333.293 78.4077L330.948 85.4447L333.125 88.6282L334.633 98.8491L339.995 105.425L342.843 112.629L343.681 121.343L346.864 124.861L342.006 138.265L336.979 138.768L335.471 142.16L327.093 150.873L326.758 153.889L324.245 157.073L325.921 160.926L326.088 165.114L323.239 168.465L321.732 196.991L318.883 200.175L318.716 207.714L320.391 212.573L315.365 219.61L320.391 220.113L326.256 229.705L329.44 229.872L339.492 247.633L341.838 255.508L344.519 260.199L343.514 265.226L346.53 267.237L351.053 268.451L361.441 276.829L365.463 283.531L366.3 288.39L371.159 291.07L370.154 292.746L371.159 296.599L373.505 299.448L375.013 302.632L377.358 303.301L380.542 302.129L385.233 302.798L385.904 304.307L386.071 306.485L388.249 311.008L387.914 312.684L394.951 317.208L395.789 324.581L398.302 329.942L404.837 338.487L406.847 338.655L409.361 340.498L410.533 345.691L417.236 347.535L423.937 362.112L399.475 377.191L388.92 393.988L384.061 395.16L372.332 393.988L369.148 397.171L364.792 403.706L345.859 410.575L338.487 420.293L325.753 421.843L326.758 434.409L322.57 434.577L318.046 438.765L308.16 436.252L301.961 437.425L292.914 446.808L269.289 456.191L207.631 423.309L187.859 418.24L166.748 421.256L139.27 421.089L118.159 409.863L113.468 397.13L84.8165 370.615L76.1039 352.351L88.6705 339.953L119.332 319.302L130.893 292.285L139.94 286.588H144.967L153.847 278.044L154.517 275.195L163.565 274.692L165.576 280.556L166.748 286.253L169.764 289.269L176.969 289.436L183.001 242.481L193.053 240.973L193.221 217.181V213.83L195.232 197.703L209.306 204.572L228.407 152.59L228.239 129.803L245.664 101.32L248.177 100.315L251.864 83.895L251.026 81.7168L253.036 77.3605L256.89 76.1876L263.759 61.4433L263.424 58.5949L269.791 48.5419L271.299 48.3744L273.813 45.0233L280.347 43.8505L311.511 53.736L322.402 51.2227L324.078 52.0605Z"
-          stroke-linecap="square"
-          stroke-linejoin="bevel"
-          fill="#EDE6E3"
-          stroke="#36382E"
-          stroke-width="1"
-        />
-        <g id="cercado-svg-inner-elements">
-          <g
-            id="cercado-svg-avenidas"
-            stroke-linecap="square"
-            stroke-linejoin="bevel"
-            stroke="#36382E"
-            stroke-width="0.75"
-          >
-            <path id="america" d="M277.972 201.461L233.428 198.726" />
-
-            <path
-              id="melchor-perez"
-              d="M245.649 216.924L246.63 207.855L246.958 199.023L246.988 195.886L246.839 193.418L248.087 189.448L248.176 188.467L250.377 185.345"
-            />
-
-            <path id="heroinas" d="M304.995 229.146L263.113 236.663" />
-
-            <path
-              id="belzu"
-              d="M301.14 222.568L299.97 226.856L300.683 229.948L308.398 246.865"
-            />
-
-            <path
-              id="juan-rosa"
-              d="M271.542 211.192L270.59 210.984L269.906 211.074L269.044 211.787L265.149 212.472L264.197 212.709L258.636 209.765"
-            />
-
-            <path id="libertadores" d="M272.642 214.642L267.914 198.421" />
-          </g>
-
-          <g
-            id="cercado-svg-rios"
-            stroke="#5BC3EB"
-            stroke-width="1"
-            stroke-linecap="square"
-            stroke-linejoin="bevel"
-          >
-            <path
-              id="rio-rocha"
-              d="M370.35 243.471L367.501 244.728H362.222L357.531 242.214H354.012L352.504 240.79L347.142 241.376L341.361 235.428L339.434 234.255L338.512 230.066L337.339 227.553L337.758 224.955L331.223 215.907L324.353 212.472L323.599 208.785L320.164 203.591L317.483 203.088L314.216 203.842L310.11 206.607L308.811 207.612L271.026 216.996L269.518 218.337L268.429 220.431L261.454 235.952L258.437 251.87L247.797 264.438L244.781 266.365L238.917 267.202L230.873 275.581L229.847 278.618L218.704 290.849L212.085 294.284L200.083 297.301L189.695 295.877L183.411 296.379L173.44 288.588L167.241 277.863L162.13 273.256L160.182 272.585L157.25 273.675L153.228 273.925L150.715 273.507L148.201 270.993L145.939 270.742L143.426 268.815"
-            />
-            <path
-              id="rio-tamborada"
-              d="M212.099 294.327L215.465 294.465L220.513 293.969L232.512 297.61L233.346 298.803L234.229 301.34L234.394 302.361L234.974 302.748L236.629 301.616L239.304 302.113L239.773 301.423L239.166 299.961L238.642 299.327L238.835 298.748L239.497 298.168L240.518 295.493L241.235 295.189L242.035 295.299L242.366 295.851L241.815 297.617L242.104 298.444L242.848 298.858L243.621 298.555L244.283 297.81L244.421 297.369L243.98 297.038L244.008 296.376L245.221 295.548H247.179L248.007 296.541L249.165 296.072L250.352 296.21L250.821 296.596L251.29 298.141L252.393 299.437L252.117 300.485L251.952 301.589L251.483 303.161L251.814 304.816L253.924 305.623L255.193 306.175L258.64 309.181L260.158 309.485L260.71 309.015L261.289 309.236L261.868 309.319L262.033 309.595L266.895 313.078L274.26 315.008L278.404 317.139L281.853 317.966L284.059 317.773L286.514 318.684L290.162 318.573L292.093 319.429L295.879 319.264L300.485 318.215L301.926 318.766L306.974 324.09L307.864 325.531L308.995 326.801L309.215 329.448L315.642 336.372L316.284 337.069L321.442 338.558L323.18 339.124L324.118 340.944L326.987 342.433L327.759 344.034L327.263 346.957L330.793 350.102L333.386 351.867L334.434 354.956L336.199 356.336L336.751 357.495L338.131 357.66L339.841 361.963L343.04 359.591L344.806 360.197L345.303 362.956L350.102 366.376L350.544 369.963L350.213 371.948L349.108 374.1V376.362L348.226 379.065L351.812 380.499L353.688 382.872L361.26 387.574L365.066 387.685L366.06 389.119L368.045 390.278L368.873 391.602L371.3 389.45L373.231 389.34L375.162 390.389L375.272 392.485L374.555 394.856L374.955 395.864L377.658 396.801L380.637 398.125L380.858 400.057L381.465 402.539L382.513 403.918"
-            />
-          </g>
-          <g
-            id="cercado-svg-lagunas"
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            stroke-linecap="square"
-            stroke-linejoin="bevel"
-            fill="#5BC3EB"
-          >
-            <path
-              id="lag-cona-cona"
-              d="M199.057 224.264L198.942 225.897L199.057 226.002L199.025 229.667L194.166 229.405L194.114 229.542L193.832 229.552L193.883 224.159L194.103 224.054L199.057 224.264Z"
-            />
-            <path
-              id="lag-quenamari"
-              d="M175.399 296.39L175.944 297.395L176.698 298.149L179.128 299.322L179.63 300.872L180.468 300.705L180.678 301.124L180.552 301.92L180.803 302.339L181.055 303.72L180.678 305.312L179.588 305.438L178.876 305.396L177.117 306.192L176.74 305.564L176.153 305.941L176.028 306.402L176.614 307.407L176.991 309.376L176.781 309.585L176.196 309.711L174.771 309.125L174.938 307.952L174.435 307.617L173.933 308.748L172.425 310.8L171.419 310.213L171.084 309.25L170.163 310.884L169.157 311.848L168.32 311.889L167.608 313.398L164.717 313.816L164.298 314.278L163.67 313.607L161.575 313.816L161.743 314.319L160.821 314.654L160.528 312.183L160.863 311.596L161.827 311.387L162.539 311.638L163.628 310.884L165.974 310.13L167.817 308.203L169.073 305.019L169.995 305.103L169.702 301.626L170.414 299.657L171.043 298.987L173.179 298.275L173.137 297.395L173.473 297.227L173.179 296.851L175.399 296.39Z"
-            />
-            <path
-              id="lag-alalay"
-              d="M313.545 246.32L314.132 246.236L314.928 246.445L315.975 247.702L316.939 248.959L316.561 249.168L316.436 249.755L316.812 250.341L317.274 250.09L318.07 250.174L318.782 252.813L319.159 253.315L318.446 254.278L318.782 254.949L317.86 256.248L318.07 257.504L317.86 257.84L318.154 258.51L318.111 259.264L317.274 260.102L316.729 260.605L316.896 261.107L317.524 261.149L319.326 260.982L318.446 261.61L318.111 262.07L319.033 262.364L319.368 262.657L320.415 262.866L321.128 262.532L322.091 262.699L322.384 263.201L324.563 264.123L324.981 263.453L325.4 264.04L327.034 265.128L328.584 266.385L329.045 268.354L328.877 268.563L329.087 272.334L327.872 272.124L326.364 272.878L326.112 273.758L325.4 274.344L323.892 273.675L323.18 272.753L322.677 272.376L319.829 273.381L313.336 273.172L313.085 273.381L307.806 272.334L306.675 273.004L305.921 272.544L303.617 268.941L303.114 264.709L302.151 261.401L299.093 257.085L297.208 253.693L296.453 253.106L296.286 250.886L296.58 250.299L299.47 249.796L302.361 250.215L304.288 251.011L307.094 249.587L309.356 247.828L311.367 247.032L311.66 247.535L312.958 247.241L313.545 246.32Z"
-            />
-
-            <circle
-              id="lag-cuellar"
-              cx="269"
-              cy="214"
-              r="5"
-              fill="url(#cuellar-cover)"
-            />
-            <circle
-              id="lag-sarco"
-              cx="246.3"
-              cy="196.5"
-              r="5"
-              fill="url(#sarco-cover)"
-            />
-            <circle
-              id="lag-cuadras"
-              cx="303.5"
-              cy="228.3"
-              r="5"
-              fill="rgba(0,0,0,0)"
-              class="dash-border"
-            />
-            <circle
-              id="lag-quenamari-circle"
-              cx="170.5"
-              cy="306.5"
-              r="15"
-              fill="url(#lag-quenamari-cover)"
-            />
-          </g>
-          <g
-            id="cercado-svg-puentes"
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            stroke-linecap="square"
-            stroke-linejoin="bevel"
-          >
-            <path
-              id="p-cala-cala-small"
-              d="M271.971 214.985L274.991 214.434L274.371 215.871L274.758 218.064L275.778 219.306L273.109 219.821L273.451 218.296L273.068 215.921L271.971 214.985Z"
-            />
-            <path
-              id="p-recoleta"
-              d="M283.574 209.45L288.38 208.495L287.418 210.822L287.403 210.858L287.411 210.896L288.154 214.754L288.161 214.787L288.183 214.813L289.875 216.811L285.59 217.707L286.111 215.201L286.116 215.176L286.111 215.152L285.369 210.974L285.36 210.927L285.324 210.896L283.574 209.45Z"
-              fill="#36382E"
-            />
-            <path
-              id="p-cala-cala"
-              d="M270.571 212.474L275.391 211.595L274.393 213.907L274.378 213.943L274.385 213.981L275.067 217.85L275.073 217.883L275.094 217.91L276.755 219.934L272.456 220.763L273.017 218.265L273.022 218.24L273.018 218.215L272.342 214.026L272.334 213.979L272.298 213.948L270.571 212.474Z"
-            />
-            <path
-              id="p-quillacollo"
-              d="M257.351 239.533L257.334 234.633L259.434 236.023L259.466 236.044L259.505 236.044L263.433 236.053L263.468 236.053L263.497 236.036L265.781 234.757L265.842 239.134L263.482 238.144L263.458 238.135L263.433 238.134L259.19 238.063L259.143 238.062L259.106 238.093L257.351 239.533Z"
-              fill="#36382E"
-            />
-            <path
-              id="p-killman"
-              d="M244.762 261.584L247.791 257.734L248.575 260.127L248.587 260.164L248.618 260.188L251.692 262.635L251.718 262.656L251.752 262.661L254.336 263.077L251.665 266.546L250.43 264.304L250.418 264.282L250.399 264.266L247.117 261.575L247.08 261.545L247.032 261.545L244.762 261.584Z"
-            />
-            <path
-              id="p-cobija"
-              d="M260.762 227.383L262.46 222.788L263.942 224.824L263.965 224.855L264.001 224.869L267.678 226.252L267.71 226.264L267.744 226.258L270.331 225.86L268.856 229.982L266.991 228.228L266.973 228.211L266.949 228.202L263 226.651L262.955 226.633L262.91 226.649L260.762 227.383Z"
-            />
-            <path
-              id="p-muyurina"
-              d="M299.376 205.679L304.665 204.512L303.665 207.086L304.49 210.927L306.368 213.052L301.697 214.132L302.2 211.42L301.37 207.259L299.376 205.679Z"
-            />
-          </g>
-          <g
-            id="cercado-svg-edificios"
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            fill="#36382E"
-            stroke-linecap="square"
-            stroke-linejoin="bevel"
-          >
-            <path
-              id="campus-umss"
-              d="M302.156 233.599L303.493 236.81L301.234 239.367L301.025 238.445L293.146 239.605L293.026 238.892L291.451 238.98L290.886 235.62L302.156 233.599Z"
-            />
-            <path
-              id="aeropuerto"
-              d="M259.766 266.243L255.099 274.288L255.506 276.868L252.315 278.972L251.84 281.552L269.424 297.37L269.831 303.345L266.64 303.819L244.626 285.252L233.765 298.898L233.493 297.744L231.456 296.453L239.467 285.863L240.078 281.586L218.354 263.12L222.562 258.978L225.821 262.169L227.247 261.83L231.116 264.002L231.932 263.12L232.814 263.867L232.746 264.953L241.232 266.447H247.071L250.33 264.342L255.217 264.546L259.155 264.477L259.766 266.243Z"
-            />
-          </g>
-        </g>
-      </svg>
-    </div>
-
-    <div class="modal">
-      <span class="close-modal-button">&times;</span>
-      <figure id="slideshow" class="center">
-        <h2 class="center"></h2>
-        <div class="side-arrow prev"></div>
-
-        <img src="" alt="" />
-
-        <div class="side-arrow next"></div>
-        <cite class="center"></cite>
-        <figcaption></figcaption>
+    <!-- Galería de fotos -->
+    <dialog class="galeria" id="galeria" aria-labelledby="galeria-titulo">
+      <form method="dialog" class="galeria__cerrar-form">
+        <button class="galeria__cerrar" aria-label="Cerrar">&times;</button>
+      </form>
+      <figure class="galeria__figura">
+        <h2 id="galeria-titulo" class="galeria__titulo"></h2>
+        <div class="galeria__escenario">
+          <button type="button" class="galeria__flecha galeria__flecha--prev" aria-label="Foto anterior"></button>
+          <div class="galeria__marco">
+            <img class="galeria__img" alt="" />
+            <div class="galeria__vacio" hidden aria-hidden="true"></div>
+          </div>
+          <button type="button" class="galeria__flecha galeria__flecha--next" aria-label="Foto siguiente"></button>
+        </div>
+        <cite class="galeria__creditos"></cite>
+        <figcaption class="galeria__texto"></figcaption>
+        <p class="galeria__contador" aria-live="polite"></p>
       </figure>
-    </div>
-    <!--Regular script load order -->
-    <!-- <script src="js/caption.js" defer></script>
-    <script src="js/animations.js" defer></script>
-    <script src="js/slideshow.js" defer></script>
-    <script src="js/script.js" defer></script> -->
-    <script src="js/script.min.js" defer></script>
+    </dialog>
   </body>
 </html>

@@ -1,11 +1,10 @@
 {
   "name": "cocha-lagunas",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Historia gráfica de las lagunas perdidas en Cochabamba",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx babel js/caption.js js/animations.js js/slideshow.js js/script.js -o js/full.script.js && npx minify js/full.script.js > js/script.min.js && npx postcss css/style.css --use autoprefixer --no-map -o css/style.prefix.css && npx minify css/style.prefix.css > css/style.min.css && npx minify index.html > index.min.html"
+    "start": "npx serve ."
   },
   "repository": {
     "type": "git",
@@ -16,16 +15,5 @@
   "bugs": {
     "url": "https://github.com/fabrizzio-gz/cocha-lagunas/issues"
   },
-  "homepage": "https://github.com/fabrizzio-gz/cocha-lagunas#readme",
-  "devDependencies": {
-    "@babel/cli": "^7.13.16",
-    "@babel/core": "^7.13.16",
-    "@babel/preset-env": "^7.13.15",
-    "autoprefixer": "^10.2.5",
-    "minify": "^7.0.1",
-    "postcss-cli": "^8.3.1"
-  },
-  "dependencies": {
-    "animejs": "^3.2.1"
-  }
+  "homepage": "https://github.com/fabrizzio-gz/cocha-lagunas#readme"
 }
